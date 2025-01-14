@@ -18,7 +18,15 @@ func main() {
 	defer out.Flush()
 
 	// "Go"od luck!
+	k, n, w := ri3()
 
+	cost := k * w * (w + 1) / 2
+
+	if cost > n {
+		println(cost - n)
+	} else {
+		println(0)
+	}
 }
 
 // cpp style typedefs
