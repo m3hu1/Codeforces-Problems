@@ -3,7 +3,7 @@ package main
 /*
 -> 	Codeforces Template (Go)
 -> 	Author: Mehul Pathak
--> 	Version: 1.2.1
+-> 	Version: 1.2.2
 */
 
 import (
@@ -120,3 +120,8 @@ func ri3() (int, int, int) { // for inputting three integers in one line
 	c, _ := strconv.Atoi(fields[2])
 	return a, b, c
 }
+
+// INT_MAX and INT_MIN
+const MaxUint = ^uint(0)
+const intmax = int(MaxUint >> 1)
+const intmin = -intmax - 1
