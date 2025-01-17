@@ -3,7 +3,7 @@ package main
 /*
 -> 	Codeforces Template (Go)
 -> 	Author: Mehul Pathak
--> 	Version: 1.2.2
+-> 	Version: 1.3.0
 */
 
 import (
@@ -17,8 +17,15 @@ import (
 func main() {
 	defer out.Flush()
 
-	// "Go"od luck!
+	t := 1
+	// t := ri()
 
+	// "Go"od luck!
+	for t > 0 {
+
+		// test case ends
+		t--
+	}
 }
 
 // cpp style typedefs
@@ -119,6 +126,15 @@ func ri3() (int, int, int) { // for inputting three integers in one line
 	b, _ := strconv.Atoi(fields[1])
 	c, _ := strconv.Atoi(fields[2])
 	return a, b, c
+}
+
+func ri4() (int, int, int, int) { // for inputting four integers in one line
+	fields := strings.Fields(scanln())
+	a, _ := strconv.Atoi(fields[0])
+	b, _ := strconv.Atoi(fields[1])
+	c, _ := strconv.Atoi(fields[2])
+	d, _ := strconv.Atoi(fields[3])
+	return a, b, c, d
 }
 
 // INT_MAX and INT_MIN
