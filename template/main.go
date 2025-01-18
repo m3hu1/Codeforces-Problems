@@ -3,7 +3,7 @@ package main
 /*
 -> 	Codeforces Template (Go)
 -> 	Author: Mehul Pathak
--> 	Version: 1.3.0
+-> 	Version: 2.0.0
 */
 
 import (
@@ -14,16 +14,20 @@ import (
 	"strings"
 )
 
+func solve() {
+	// "Go"od luck!
+
+}
+
 func main() {
 	defer out.Flush()
 
 	t := 1
 	// t := ri()
 
-	// "Go"od luck!
 	for t > 0 {
-
-		// test case ends
+		solve()
+		// test case ends here
 		t--
 	}
 }
@@ -34,80 +38,107 @@ type float = float32
 type double = float64
 
 // faster i/o
-var in = bufio.NewReader(os.Stdin)
-var out = bufio.NewWriter(os.Stdout)
+var (
+	in  = bufio.NewReader(os.Stdin)
+	out = bufio.NewWriter(os.Stdout)
+)
 
 // pythonic printing
 func print(arg ...interface{})            { fmt.Fprint(out, arg...) }
 func println(arg ...interface{})          { fmt.Fprintln(out, arg...) }
 func printf(f string, arg ...interface{}) { fmt.Fprintf(out, f, arg...) }
 
+// utility functions
 func scanln() string {
 	x, _ := in.ReadString('\n')
 	return strings.Trim(x, " \r\n")
 }
-func scan(s []string) string {
-	if len(s) == 0 {
-		return scanln()
-	}
-	return s[0]
+
+func rs() string    { return scanln() }                     // readString
+func rss() []string { return strings.Split(scanln(), " ") } // readStrings
+
+func rb() bool { // readBool
+	var x bool
+	fmt.Fscan(in, &x)
+	return x
 }
-
-func readLine() string          { return scanln() }                                            // readLine
-func rs() string                { return scanln() }                                            // readString
-func rss() []string             { return strings.Split(scanln(), " ") }                        // readStrings
-func readBool(s ...string) bool { t, _ := strconv.ParseBool(scan(s)); return t }               // readBool
-func readByte(s ...string) byte { t, _ := strconv.ParseUint(scan(s), 10, 8); return byte(t) }  // readByte
-func rd(s ...string) double     { t, _ := strconv.ParseFloat(scan(s), 64); return t }          // readDouble
-func rf(s ...string) float      { t, _ := strconv.ParseFloat(scan(s), 32); return float32(t) } // readFloat
-func ri(s ...string) int        { t, _ := strconv.Atoi(scan(s)); return t }                    // readInt
-func readLong(s ...string) long { t, _ := strconv.ParseInt(scan(s), 10, 64); return t }        // readLong
-
-func readBools() []bool { // readBools
+func rbs() []bool { // readBools
 	s := rss()
 	arr := make([]bool, len(s))
-	for i, s := range s {
-		arr[i] = readBool(s)
+	for i, v := range s {
+		arr[i], _ = strconv.ParseBool(v)
 	}
 	return arr
 }
-func readBytes() []byte { // readBytes
-	s := rss()
-	arr := make([]byte, len(s))
-	for i, s := range s {
-		arr[i] = readByte(s)
-	}
-	return arr
-}
-func rds() []double { // readDoubles
-	s := rss()
-	arr := make([]double, len(s))
-	for i, s := range s {
-		arr[i] = rd(s)
-	}
-	return arr
-}
-func rfs() []float { // readFloats
-	s := rss()
-	arr := make([]float, len(s))
-	for i, s := range s {
-		arr[i] = rf(s)
-	}
-	return arr
+
+func ri() int { // readInt
+	var x int
+	fmt.Fscan(in, &x)
+	return x
 }
 func ris() []int { // readInts
 	s := rss()
 	arr := make([]int, len(s))
-	for i, s := range s {
-		arr[i] = ri(s)
+	for i, v := range s {
+		arr[i], _ = strconv.Atoi(v)
 	}
 	return arr
 }
-func readLongs() []long { // readLongs
+
+func rf() float { // readFloat
+	var x float
+	fmt.Fscan(in, &x)
+	return x
+}
+func rfs() []float { // readFloats
+	s := rss()
+	arr := make([]float, len(s))
+	for i, v := range s {
+		val, _ := strconv.ParseFloat(v, 32)
+		arr[i] = float(val)
+	}
+	return arr
+}
+
+func rd() double { // readDouble
+	var x double
+	fmt.Fscan(in, &x)
+	return x
+}
+func rds() []double { // readDoubles
+	s := rss()
+	arr := make([]double, len(s))
+	for i, v := range s {
+		arr[i], _ = strconv.ParseFloat(v, 64)
+	}
+	return arr
+}
+
+func rl() long { // readLong
+	var x long
+	fmt.Fscan(in, &x)
+	return x
+}
+func rls() []long { // readLongs
 	s := rss()
 	arr := make([]long, len(s))
-	for i, s := range s {
-		arr[i] = readLong(s)
+	for i, v := range s {
+		arr[i], _ = strconv.ParseInt(v, 10, 64)
+	}
+	return arr
+}
+
+func readByte() byte { // readByte
+	var x int
+	fmt.Fscan(in, &x)
+	return byte(x)
+}
+func readBytes() []byte { // readBytes
+	s := rss()
+	arr := make([]byte, len(s))
+	for i, v := range s {
+		val, _ := strconv.Atoi(v)
+		arr[i] = byte(val)
 	}
 	return arr
 }
