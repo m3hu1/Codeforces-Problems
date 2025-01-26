@@ -21,7 +21,7 @@ func main() {
 	defer out.Flush()
 
 	t := 1
-	// t := ri()
+	// t = ri()
 
 	for t > 0 {
 		solve()
